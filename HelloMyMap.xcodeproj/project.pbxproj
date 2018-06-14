@@ -14,6 +14,9 @@
 		3812295420C7937500561A61 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3812295220C7937500561A61 /* LaunchScreen.storyboard */; };
 		3812295F20C7937500561A61 /* HelloMyMapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3812295E20C7937500561A61 /* HelloMyMapTests.swift */; };
 		3812296A20C7937500561A61 /* HelloMyMapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3812296920C7937500561A61 /* HelloMyMapUITests.swift */; };
+		38B4A7E120C8E2B60004EC05 /* pointRed@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 38B4A7DE20C8E2B60004EC05 /* pointRed@3x.png */; };
+		38B4A7E220C8E2B60004EC05 /* pointRed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 38B4A7DF20C8E2B60004EC05 /* pointRed@2x.png */; };
+		38B4A7E320C8E2B60004EC05 /* pointRed.png in Resources */ = {isa = PBXBuildFile; fileRef = 38B4A7E020C8E2B60004EC05 /* pointRed.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 		3812296520C7937500561A61 /* HelloMyMapUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HelloMyMapUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3812296920C7937500561A61 /* HelloMyMapUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloMyMapUITests.swift; sourceTree = "<group>"; };
 		3812296B20C7937500561A61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		38B4A7DE20C8E2B60004EC05 /* pointRed@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pointRed@3x.png"; sourceTree = "<group>"; };
+		38B4A7DF20C8E2B60004EC05 /* pointRed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pointRed@2x.png"; sourceTree = "<group>"; };
+		38B4A7E020C8E2B60004EC05 /* pointRed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pointRed.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +103,9 @@
 		3812294820C7937300561A61 /* HelloMyMap */ = {
 			isa = PBXGroup;
 			children = (
+				38B4A7E020C8E2B60004EC05 /* pointRed.png */,
+				38B4A7DF20C8E2B60004EC05 /* pointRed@2x.png */,
+				38B4A7DE20C8E2B60004EC05 /* pointRed@3x.png */,
 				3812294920C7937300561A61 /* AppDelegate.swift */,
 				3812294B20C7937300561A61 /* ViewController.swift */,
 				3812294D20C7937300561A61 /* Main.storyboard */,
@@ -193,6 +202,11 @@
 				TargetAttributes = {
 					3812294520C7937300561A61 = {
 						CreatedOnToolsVersion = 9.4;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					3812295920C7937500561A61 = {
 						CreatedOnToolsVersion = 9.4;
@@ -229,8 +243,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38B4A7E320C8E2B60004EC05 /* pointRed.png in Resources */,
 				3812295420C7937500561A61 /* LaunchScreen.storyboard in Resources */,
+				38B4A7E220C8E2B60004EC05 /* pointRed@2x.png in Resources */,
 				3812295120C7937500561A61 /* Assets.xcassets in Resources */,
+				38B4A7E120C8E2B60004EC05 /* pointRed@3x.png in Resources */,
 				3812294F20C7937300561A61 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +14,58 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="HelloMyMap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dU0-rE-d9B">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </mapView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="vEu-bg-hF9">
+                                <rect key="frame" x="41.5" y="20" width="167" height="29"/>
+                                <segments>
+                                    <segment title="標準"/>
+                                    <segment title="衛星"/>
+                                    <segment title="混合"/>
+                                    <segment title="鳥瞰"/>
+                                </segments>
+                                <connections>
+                                    <action selector="mapTypeChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="xGj-M5-xEG"/>
+                                </connections>
+                            </segmentedControl>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="xKE-dI-pGd">
+                                <rect key="frame" x="125" y="66" width="125" height="29"/>
+                                <segments>
+                                    <segment title="無"/>
+                                    <segment title="追蹤"/>
+                                    <segment title="方向"/>
+                                </segments>
+                                <connections>
+                                    <action selector="useTrackingModeChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="mgd-yj-Eoy"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="xKE-dI-pGd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="94l-8O-otO"/>
+                            <constraint firstItem="vEu-bg-hF9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="LRz-Ll-LWR"/>
+                            <constraint firstItem="dU0-rE-d9B" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="PSc-B1-aCf"/>
+                            <constraint firstItem="xKE-dI-pGd" firstAttribute="top" secondItem="vEu-bg-hF9" secondAttribute="bottom" constant="18" id="W9M-Zj-wOP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dU0-rE-d9B" secondAttribute="trailing" id="fnA-YY-Zh8"/>
+                            <constraint firstItem="dU0-rE-d9B" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="jJ0-gQ-8mk"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="dU0-rE-d9B" secondAttribute="bottom" id="o6y-dq-7Tg"/>
+                            <constraint firstItem="vEu-bg-hF9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" multiplier="2/3" id="zz4-kZ-w6W"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="mainMapView" destination="dU0-rE-d9B" id="c45-hi-Y56"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
         </scene>
     </scenes>
 </document>
